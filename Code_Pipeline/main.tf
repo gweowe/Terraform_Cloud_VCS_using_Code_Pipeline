@@ -29,9 +29,15 @@ module "code_pipeline" {
   codepipline_name = "${var.aws_user_name}-${count.index}-codepipeline"
   bucket_name = "${var.aws_user_name}-${count.index}-bucket"
 
+  #cloudwatch
+  cloudwatch_codecommit_name = "${var.aws_user_name}-${count.index}-cloudwatch-codecommit"
+  cloudwatch_trigger_name = "${var.aws_user_name}-${count.index}-cloudwatch-trigger"
+
   #iam
   codebuild_role_name = "${var.aws_user_name}-${count.index}-codebuild-role"
   codebuild_policy_name = "${var.aws_user_name}-${count.index}-codebuild-policy"
   codepipeline_role_name = "${var.aws_user_name}-${count.index}-codepipeline-role"
   codepipeline_policy_name = "${var.aws_user_name}-${count.index}-codepipeline-policy"
+  cloudwatch_role_name = "${var.aws_user_name}-${count.index}-cloudwatch-role"
+  cloudwatch_policy_name = "${var.aws_user_name}-${count.index}-cloudwatch-policy"
 }

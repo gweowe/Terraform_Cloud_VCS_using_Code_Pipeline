@@ -20,7 +20,7 @@ resource "aws_codepipeline" "code_pipeline" {
       configuration = {
         RepositoryName = aws_codecommit_repository.codecommit_repository.repository_name
         BranchName = "${var.repository_branch}"
-        PollForSourceChanges = "true"
+        PollForSourceChanges = "false"
       }
     }
   }

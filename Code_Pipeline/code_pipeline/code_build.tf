@@ -3,7 +3,7 @@ resource "aws_codebuild_project" "codebuild" {
   service_role = aws_iam_role.codebuild_role.arn
 
   artifacts {
-    type = "CODEPIPELINE"
+    type = "NO_ARTIFACTS"
   }
 
   environment {
@@ -20,7 +20,8 @@ resource "aws_codebuild_project" "codebuild" {
   }
 
   source {
-    type = "CODEPIPELINE"
+    type = "CODECOMMIT"
+    location = aws_codecommit_repository.codecommit_repository.clone_url_http
     buildspec = <<EOF
 ${file("${path.module}/buildspec.yml")}
     EOF

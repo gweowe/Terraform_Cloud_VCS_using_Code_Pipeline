@@ -41,3 +41,20 @@ variable "codepipeline_role_name" {
 variable "codepipeline_policy_name" {
   type = string
 }
+
+variable "cloudwatch_role_name" {
+  type = string
+}
+
+variable "cloudwatch_policy_name" {
+  type = string
+}
+
+#cloudwatch
+variable "cloudwatch_codecommit_name" {
+  type = string
+}
+
+variable "cloudwatch_trigger_name" {
+  type = string
+}
